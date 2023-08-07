@@ -1,9 +1,10 @@
-FROM ruby:2.7.7-alpine
+FROM ruby:2.7.8-alpine
 RUN apk add --no-cache g++ musl-dev make libstdc++ wget imagemagick
 
 WORKDIR /usr/src/app
 
 COPY Gemfile ./
-RUN bundle install
+COPY Gemfile.lock ./
+RUN bundle install --jobs 4 --retry 3
 
 COPY . .
