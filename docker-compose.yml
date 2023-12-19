@@ -1,6 +1,7 @@
 version: '3'
 services:
     tech-conferences:
+        build: .
         image: tech-conferences
         ports:
             - '4000:4000'
