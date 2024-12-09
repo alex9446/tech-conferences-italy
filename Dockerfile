@@ -1,4 +1,4 @@
-FROM ruby:2.7.8-alpine
+FROM ruby:3.1.1-alpine
 RUN apk add --no-cache g++ musl-dev make libstdc++ wget imagemagick
 
 WORKDIR /usr/src/app
